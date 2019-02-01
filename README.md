@@ -26,7 +26,7 @@ With the bonus user stories, auto layout handles scaling to any screen size.
 
 
 ## iPad Pro
-<img src="http://g.recordit.co/1eUflJRomP.gif" width=2000><br>
+<img src="http://g.recordit.co/1eUflJRomP.gif" width=600><br>
 
 
 ### Challenges
