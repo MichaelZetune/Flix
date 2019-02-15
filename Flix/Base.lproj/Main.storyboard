@@ -62,6 +62,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterView" destination="fBo-SD-vSW" id="pFU-NM-zaL"/>
+                                            <segue destination="bMd-6n-cfV" kind="show" id="RVJ-qF-yCV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -191,10 +192,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80b-ck-uVG" userLabel="Watch Trailer Button">
+                                <rect key="frame" x="141" y="318" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Watch Trailer"/>
+                                <connections>
+                                    <action selector="watchTrailerButtonPressed:" destination="bMd-6n-cfV" eventType="touchUpInside" id="BJu-pj-ktp"/>
+                                    <segue destination="VHo-Vx-UC7" kind="show" id="AgX-l5-nMs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rs4-31-nJO"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="TjW-75-fkp" id="4iP-zK-y8J"/>
                         <outlet property="posterImageView" destination="8Db-E4-BNm" id="sBQ-6y-C7G"/>
@@ -204,7 +216,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xy-Zg-MsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="552.77361319340332"/>
+            <point key="canvasLocation" x="258" y="916"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="Agi-tU-nij">
+            <objects>
+                <viewController id="VHo-Vx-UC7" customClass="TrailerViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41s-67-VXC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yv5-ML-Tyj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LKq-Dg-xhU" firstAttribute="top" secondItem="Yv5-ML-Tyj" secondAttribute="top" constant="64" id="93y-sg-L2z"/>
+                            <constraint firstItem="Yv5-ML-Tyj" firstAttribute="bottom" secondItem="LKq-Dg-xhU" secondAttribute="bottom" constant="93" id="OUg-9v-9mm"/>
+                            <constraint firstItem="Yv5-ML-Tyj" firstAttribute="leading" secondItem="LKq-Dg-xhU" secondAttribute="leading" id="y9v-hf-4kG"/>
+                            <constraint firstItem="LKq-Dg-xhU" firstAttribute="trailing" secondItem="Yv5-ML-Tyj" secondAttribute="trailing" id="yjl-vc-rD3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LKq-Dg-xhU"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Yv5-ML-Tyj" id="W1O-f9-SIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Me3-2m-6MX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="915.29235382308855"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="oNF-rc-GpX">
@@ -249,4 +295,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RVJ-qF-yCV"/>
+    </inferredMetricsTieBreakers>
 </document>

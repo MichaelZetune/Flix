@@ -15,6 +15,12 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     
+
+    @IBAction func watchTrailerButtonPressed(_ sender: Any) {
+        
+    }
+    
+    
     var movie: [String: Any]!
 
     override func viewDidLoad() {
@@ -39,14 +45,23 @@ class MovieDetailsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // find the selected movie
+        let senderButton = sender as! UIButton
+        
+        // pass to the segue destination
+        let trailerViewController = segue.destination as! TrailerViewController
+        trailerViewController.movie = movie
+        
+        // tableView.deselectRow(at: indexPath, animated: true)
     }
-    */
+ 
 
 }
