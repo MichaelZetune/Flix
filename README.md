@@ -10,16 +10,19 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 - [x] (5pts) User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView.
 
 #### BONUS
-- [ ] (2pts) User can tap a poster in the collection view to see a detail screen of that movie.
+- [x] (2pts) User can tap a poster in the collection view to see a detail screen of that movie.
 - [ ] (2pts) In the detail view, when the user taps the poster, a new screen is presented modally where they can view the trailer.
 
 ### App Walkthough GIF
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=250><br>
+## iPhone 8
+<img src="http://g.recordit.co/RIGeOGLV8r.gif" width=250><br>
 
-### Notes
-Describe any challenges encountered while building the app.
+## iPad Pro
+<img src="http://g.recordit.co/EGP3iINlBo.gif" width=600><br>
+
+### Challenges
+Interactions between Tab Bar View Controllers and Navigation View Controllers took some extra work.
 
 
 ---
@@ -39,13 +42,6 @@ Describe any challenges encountered while building the app.
 
 ### App Walkthough GIFs
 With the bonus user stories, auto layout handles scaling to any screen size.
-
-## iPhone XS
-<img src="http://g.recordit.co/D46FCifqvh.gif" width=250><br>
-
-
-## iPad Pro
-<img src="http://g.recordit.co/1eUflJRomP.gif" width=600><br>
 
 
 ### Challenges
