@@ -39,14 +39,11 @@ class TrailerViewController: UIViewController, WKUIDelegate {
                 print(error.localizedDescription)
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                print("DATADICTIONARY: \(dataDictionary)")
                 let videos = dataDictionary["results"] as! [[String: Any]]
-                print("VIDEOS: \(videos)")
                 let trailerVideo = videos[0]
-                print("TRAILERVIDEO: \(trailerVideo)")
-                let trailerVideoKey = trailerVideo["key"]!
-                print("TRAILERVIDEOKEY: \(trailerVideoKey)")
-                let trailerRequestUrl = URL(string: "\(youtubeBaseUrl)+ \(trailerVideoKey)")!
+                let trailerVideoKey = trailerVideo["key"] as! String
+                let fullURL = "\(youtubeBaseUrl)\(trailerVideoKey)"
+                let trailerRequestUrl = URL(string: fullURL)!
                 let trailerRequest = URLRequest(url: trailerRequestUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
                 self.webView.load(trailerRequest)
             }
